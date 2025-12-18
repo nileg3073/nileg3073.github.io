@@ -2,99 +2,99 @@
 <html lang="en">
 
 <head>
-    <title class="owner-name">#</title>
+    <title class="owner-name">Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap + Fonts -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" /> 
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 </head>
 
 <body>
 
-    <!-- Navbar -->
-
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand owner-name" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="github" target="_blank">Github</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" id="github" target="_blank">Github</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- First Container -->
-    <div class="container-fluid bg-1 text-center">
-        <!--<h1 class="margin">Name</h1>-->
-        <img src="img/Logo.png" class="img-fluid" alt="Logo" id="logo">
-    </div>
+    <!-- HERO -->
+    <section class="hero">
+        <img src="img/Logo.png" alt="Logo" id="logo">
+        <h1 class="mt-4">Welcome</h1>
+    </section>
 
-    <!-- Second Container -->
-    <div class="container-fluid bg-2 text-center" id="projects">
-        <h3 class="margin">Projects</h3>
+    <!-- PROJECTS -->
+    <section class="section text-center" id="projects">
         <div class="container">
-            <div class="row">
+            <h3>Projects</h3>
 
-                
+            <div class="row justify-content-center">
                 <div class="col-sm-5">
-                    <div class="card">
+                    <div class="card project-card">
                         <div class="card-body">
                             <h5 class="card-title">Movie Webpage</h5>
                             <h6 class="card-subtitle mb-2 text-muted">10th Grade</h6>
-                            <p class="card-text">A  webpage that me and my partner created about a fictional movie.</p>
-                            <a href="projects/movie-webpage.html" class="card-link">More!</a>
+                            <p class="card-text">
+                                A webpage that my partner and I created about a fictional movie using HTML and CSS.
+                            </p>
+                            <a href="projects/movie-webpage.html" class="card-link">View Project →</a>
                         </div>
                     </div>
                 </div>
-               
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section bg-light text-center">
+        <div class="container">
+            <h3>About Me</h3>
+
+            <div class="row mt-4">
+                <div class="col-sm-4">
+                    <div class="about-card">
+                        <p>I love coding. It’s my passion.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="about-card">
+                        <p>I’m really into video games and love playing them.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="about-card">
+                        <p>I love my phone way too much.</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <a href="#" target="_blank"><img src="img/fork.png"></a><br>
+        <a href="https://hstatsep.github.io" target="_blank">
+            <img src="https://hstatsep.github.io/img/hstatsep-logo-small.png">
         </a>
-    </div>
-
-    <!-- Third Container (Grid) -->
-    <div class="container-fluid bg-3 text-center">
-        <h3 class="margin">About Me</h3><br>
-        <div class="row">
-            <div class="col-sm-4">
-                <p>I love coding, it's my passion.</p>
-            </div>
-            <div class="col-sm-4">
-                <p>Very big on videogames, love to play them.</p>
-            </div>
-            <div class="col-sm-4">
-                <p>I love my phone, so much.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="container-fluid bg-4 text-center">
-        <a href="#" target="_blank" id="fork"><img src="img/fork.png"></a><br>
-        <a href="https://hstatsep.github.io" target="_blank"><img src="https://hstatsep.github.io/img/hstatsep-logo-small.png" id="sep"></a>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
-    <script src="script.js"></script>
 </body>
-
 </html>
