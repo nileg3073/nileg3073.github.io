@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title class="owner-name">Movie Webpage Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap + Fonts -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f4f7fb;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #2196f3, #90caf9);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-weight: 700;
+        }
+
+        .hero p {
+            opacity: 0.9;
+        }
+
+        /* MAIN CARD */
+        .content-card {
+            background: white;
+            border-radius: 18px;
+            padding: 45px;
+            margin-top: -60px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+        }
+
+        /* SECTION CARDS */
+        .section-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 22px 55px rgba(0,0,0,0.15);
+        }
+
+        .section-card h2 {
+            font-weight: 700;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .section-card h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #2196f3, #64b5f6);
+            border-radius: 4px;
+            transition: width 0.35s ease;
+        }
+
+        .section-card:hover h2::after {
+            width: 120px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            font-weight: 600;
+        }
+
+        .project-img {
+            border-radius: 14px;
+            margin-top: 25px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 30px 0;
+            background: #111;
+        }
+
+        footer img {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand owner-name" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/nileg3073" id="github" target="_blank">Github</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>My Youtube Channel</h1>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="container">
+        <div class="content-card">
+
+            <div class="section-card">
+                <h2>Contextual Information</h2>
+                <p class="section-sub">Overview of the project and the objective</p>
+                <p>
+                    Under construction.
+                </p>
+            </div>
+
+            <div class="section-card">
+                <h2>Content</h2>
+                <p class="section-sub">What's in the video?</p>
+                <p>
+                    Under construction.
+                </p>
+            </div>
+
+            <div class="section-card">
+                <h2>Challenges</h2>
+                <p class="section-sub">What went wrong and how I handled it</p>
+                <p>
+                    Under construction.
+                </p>
+            </div>
+
+            <div class="section-card">
+                <h2>Takeaways</h2>
+                <ul>
+                    <li>WIP</li>
+                    <li>WIP</li>
+                    <li>WIP</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2>Next Steps</h2>
+                <ul>
+                    <li>WIP</li>
+                    <li>WIP</li>
+                    <li>WIP</li>
+                    <li>WIP</li>
+                    <li>WIP</li>
+                </ul>
+            </div>
+
+            <a href="#">Preview of the video</a><br>
+            <a href="#">View the capcut editing</a>
+
+            <img src="#" class="img-fluid project-img">
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <a href="#" target="_blank"><img src="../img/fork.png"></a><br>
+        <a href="https://hstatsep.github.io" target="_blank">
+            <img src="https://hstatsep.github.io/img/hstatsep-logo-small.png">
+        </a>
+    </footer>
+
+</body>
+</html>
