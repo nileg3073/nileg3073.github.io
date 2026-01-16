@@ -1,78 +1,133 @@
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: #f4f7fb;
-        }
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f4f7fb;
+    color: #333;
+}
 
-        /* HERO */
-        .hero {
-            background: linear-gradient(135deg, #1e88e5, #90caf9);
-            padding: 100px 20px;
-            text-align: center;
-            color: white;
-        }
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #1e88e5, #90caf9);
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
 
-        #logo {
-            max-width: 220px;
-            border-radius: 50%;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-        }
+#logo {
+    max-width: 220px;
+    border-radius: 50%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
 
-        /* SECTION */
-        .section {
-            padding: 80px 0;
-        }
+/* SECTION */
+.section {
+    padding: 80px 0;
+}
 
-        .section h3 {
-            font-weight: 700;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-        }
+.section h3 {
+    font-weight: 700;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
 
-        .section h3::after {
-            content: "";
-            display: block;
-            height: 4px;
-            width: 60px;
-            background: linear-gradient(90deg, #1e88e5, #64b5f6);
-            margin: 12px auto 0;
-            border-radius: 4px;
-        }
+.section h3::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(90deg, #1e88e5, #64b5f6);
+    margin: 12px auto 0;
+    border-radius: 4px;
+}
 
-        /* PROJECT CARD */
-        .project-card {
-            border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
-        }
+/* PROJECT CARD */
+.project-card {
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    background-color: #ffffff;
+}
 
-        .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.18);
-        }
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+}
 
-        .project-card .card-body {
-            padding: 30px;
-        }
+.project-card .card-body {
+    padding: 30px;
+}
 
-        /* ABOUT CARDS */
-        .about-card {
-            background: white;
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
+.project-card .card-title {
+    font-weight: 600;
+}
 
-        .about-card:hover {
-            transform: translateY(-6px);
-        }
+.project-card .card-subtitle {
+    font-weight: 500;
+}
 
-        footer {
-            background: #111;
-            padding: 35px 0;
-        }
+/* Grid layout for projects */
+.project-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
 
-        footer img {
-            margin: 10px;
-        }
+.project-card-container .project-card {
+    flex: 0 0 calc(33.3333% - 30px);
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .project-card-container .project-card {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card-container .project-card {
+        flex: 0 0 100%;
+    }
+}
+
+/* ABOUT CARDS */
+.about-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Footer */
+footer {
+    background: #111;
+    padding: 35px 0;
+}
+
+footer img {
+    margin: 10px;
+}
+
+/* Navbar */
+.navbar {
+    padding: 10px 20px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #fff !important;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #1e88e5 !important;
+}
+
+/* Add some spacing to the sections */
+.section {
+    margin-bottom: 60px;
+}
