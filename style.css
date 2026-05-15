@@ -1,133 +1,123 @@
-/* General Styles */
 body {
-    font-family: 'Montserrat', sans-serif;
-    background: #f4f7fb;
-    color: #333;
+  font-family: 'Montserrat', sans-serif;
+  background: #f4f7fb;
+  color: #333;
+  transition: 0.3s ease;
+  scroll-behavior: smooth;
 }
 
-/* HERO */
+body.dark {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+.glass-navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.65);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
 .hero {
-    background: linear-gradient(135deg, #1e88e5, #90caf9);
-    padding: 100px 20px;
-    text-align: center;
-    color: white;
+  margin-top: 80px;
+  background: linear-gradient(135deg, #1e88e5, #90caf9);
+  padding: 90px 20px;
+  text-align: center;
+  color: white;
 }
 
 #logo {
-    max-width: 220px;
-    border-radius: 50%;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  width: 170px;
+  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  animation: float 4s ease-in-out infinite;
 }
 
-/* SECTION */
-.section {
-    padding: 80px 0;
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.section h3 {
-    font-weight: 700;
-    margin-bottom: 40px;
-    position: relative;
-    display: inline-block;
+.section-title {
+  font-weight: 700;
+  margin-bottom: 25px;
 }
 
-.section h3::after {
-    content: "";
-    display: block;
-    height: 4px;
-    width: 60px;
-    background: linear-gradient(90deg, #1e88e5, #64b5f6);
-    margin: 12px auto 0;
-    border-radius: 4px;
+.project-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 10px;
 }
 
-/* PROJECT CARD */
 .project-card {
-    border-radius: 18px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-    background-color: #ffffff;
+  min-width: 260px;
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.project-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+body.dark .project-card {
+  background: #1e293b;
+  color: white;
 }
 
-.project-card .card-body {
-    padding: 30px;
+.skill {
+  margin-bottom: 20px;
 }
 
-.project-card .card-title {
-    font-weight: 600;
+.progress {
+  height: 10px;
+  border-radius: 10px;
+  background: #e5e7eb;
 }
 
-.project-card .card-subtitle {
-    font-weight: 500;
+body.dark .progress {
+  background: #1e293b;
 }
 
-/* Grid layout for projects */
-.project-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+.progress-bar {
+  background: #1e88e5;
 }
 
-.project-card-container .project-card {
-    flex: 0 0 calc(33.3333% - 30px);
-    margin: 10px;
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
 }
 
-@media (max-width: 768px) {
-    .project-card-container .project-card {
-        flex: 0 0 calc(50% - 20px);
-    }
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@media (max-width: 480px) {
-    .project-card-container .project-card {
-        flex: 0 0 100%;
-    }
+.typing-text {
+  font-size: 18px;
 }
 
-/* ABOUT CARDS */
-.about-card {
-    background: white;
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+.cursor {
+  animation: blink 0.8s infinite;
 }
 
-.about-card:hover {
-    transform: translateY(-6px);
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
-/* Footer */
-footer {
-    background: #111;
-    padding: 35px 0;
+.footer-fork {
+  width: 35px;
+  transition: 0.3s ease;
 }
 
-footer img {
-    margin: 10px;
+.footer-fork:hover {
+  transform: rotate(10deg) scale(1.1);
 }
 
-/* Navbar */
-.navbar {
-    padding: 10px 20px;
+.footer-hstat {
+  height: 35px;
+  margin-top: 10px;
 }
 
-.navbar-nav .nav-item .nav-link {
-    color: #fff !important;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-    color: #1e88e5 !important;
-}
-
-/* Add some spacing to the sections */
-.section {
-    margin-bottom: 60px;
+.footer-link {
+  color: #1e88e5;
+  font-weight: 700;
 }
