@@ -15,194 +15,408 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+            <img src="img/preview-of-project.jpg" class="img-fluid project-img">
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>CYOA Project</title>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+
     <style>
+
         body {
             font-family: 'Montserrat', sans-serif;
             background: #f4f7fb;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            backdrop-filter: blur(12px);
+            background: rgba(255,255,255,0.8) !important;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+        }
+
+        .nav-link {
+            font-weight: 600;
         }
 
         /* HERO */
+
         .hero {
-            background: linear-gradient(135deg, #2196f3, #90caf9);
+            margin-top: 56px;
+            background: linear-gradient(135deg, #1e88e5, #90caf9);
             color: white;
-            padding: 80px 20px;
             text-align: center;
+            padding: 110px 20px;
         }
 
         .hero h1 {
             font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 0;
         }
 
-        .hero p {
-            opacity: 0.9;
-        }
+        /* CONTENT */
 
-        /* MAIN CARD */
         .content-card {
-            background: white;
-            border-radius: 18px;
-            padding: 45px;
-            margin-top: -60px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+            background: transparent;
+            box-shadow: none;
+            margin-top: 50px;
+            padding: 0;
         }
 
-        /* SECTION CARDS */
         .section-card {
             background: white;
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 35px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
         }
 
         .section-card:hover {
-            transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 22px 55px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
 
         .section-card h2 {
             font-weight: 700;
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        .section-card h2::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #2196f3, #64b5f6);
-            border-radius: 4px;
-            transition: width 0.35s ease;
-        }
-
-        .section-card:hover h2::after {
-            width: 120px;
+            color: #1e88e5;
+            margin-bottom: 10px;
         }
 
         .section-sub {
-            text-align: center;
-            color: #666;
-            margin-bottom: 12px;
+            color: #6b7280;
+            margin-bottom: 15px;
         }
 
         p {
-            line-height: 1.7;
-            color: #333;
+            line-height: 1.8;
         }
 
         ul li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        a {
-            font-weight: 600;
+        /* PROJECT BUTTONS */
+
+        .project-links {
+            text-align: center;
+            margin: 40px 0;
         }
+
+        .project-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .project-links a:first-child {
+            background: #1e88e5;
+            color: white;
+        }
+
+        .project-links a:last-child {
+            border: 2px solid #1e88e5;
+            color: #1e88e5;
+        }
+
+        .project-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        /* IMAGE */
 
         .project-img {
-            border-radius: 14px;
-            margin-top: 25px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transition: 0.3s ease;
         }
 
+        .project-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* REVEAL */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+
         footer {
-            margin-top: 80px;
-            padding: 30px 0;
-            background: #111;
+            margin-top: 100px;
+            padding: 90px 20px;
+            background: #1e88e5;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #f4f7fb;
+            border-radius: 50%;
         }
 
         footer img {
             margin: 10px;
         }
+
+        @media (max-width: 768px) {
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-card {
+                padding: 25px;
+            }
+
+        }
+
     </style>
+
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand owner-name" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://github.com/nileg3073" id="github" target="_blank">Github</a></li>
-                <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg fixed-top">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="../index.html">
+                Nile Gibson's Portfolio
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+
+                Menu
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="https://github.com/nileg3073"
+                           target="_blank">
+                            Github
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
+
     </nav>
 
     <!-- HERO -->
+
     <section class="hero">
+
         <h1>Choose Your Own Adventure (CYOA) Project</h1>
+
     </section>
 
     <!-- CONTENT -->
+
     <div class="container">
+
         <div class="content-card">
 
-            <div class="section-card">
+            <div class="section-card reveal">
+
                 <h2>Contextual Information</h2>
-                <p class="section-sub">Overview of the project and the objective</p>
-                <p>
-                    After learning about Git & Github for the past 2-3 months, Mr. Mueller decided to give us a project that involves collaboration through Github towards creating an adventure that you can choose the pathway. This project was created with my friend Stacy, working with her was very fun & I loved working with her.
-                </p>
-            </div>
 
-            <div class="section-card">
-                <h2>Content</h2>
-                <p class="section-sub">What's in the adventure?</p>
-                <p>
-                    Basically, I created the Male Celebrity perspective where the male celebrity goes on this crazy adventure, and theres only one winning way for him. Just be mindful and don't judge my crazy ideas for the game over's & death ideas I chose. Stacy created the Female perspective where she thought of the most sweet approach of ideas towards the adventure, if you aren't really into satire humor, then you would like Stacy's adventure. That's really it.
-                </p>
-            </div>
+               <p class="section-sub">Overview of the project and the objective</p>
 
-            <div class="section-card">
-                <h2>Challenges</h2>
-                <p class="section-sub">What went wrong and how I handled it</p>
-                <p>
-                    The only real challenges I had with this project, was the major procasination habits as I literally didn't start really working on this until the last minute. Working on this literally the night before it's due, lessens the quality & efficiency of the project. Another thing that really bugged me, was the rushing of this as I was clearly rushing with this as this project is clearly unfinished but meets the requirements to be submitted. I apologize for the unfinished images, I'm really feeling extremely lazy right now & I want to go to bed as I am writing this at 9pm. Next thing I want to mention is that my schedule was very busy because I made it busy, this was completely avoidable and I could've found more time to work on this project without pushing all of this cortisol on myself
-                </p>
-            </div>
+<p>
+   After learning about Git & Github for the past 2-3 months, Mr. Mueller decided to give us a project that involves collaboration through Github towards creating an adventure that you can choose the pathway. This project was created with my friend Stacy, working with her was very fun & I loved working with her.
+</p>
 
-            <div class="section-card">
-                <h2>Takeaways</h2>
-                <ul>
+</div>
+
+<div class="section-card reveal">
+
+    <h2>Content</h2>
+
+    <p class="section-sub">What's on my website</p>
+
+    <p>
+         Basically, I created the Male Celebrity perspective where the male celebrity goes on this crazy adventure, and theres only one winning way for him. Just be mindful and don't judge my crazy ideas for the game over's & death ideas I chose. Stacy created the Female perspective where she thought of the most sweet approach of ideas towards the adventure, if you aren't really into satire humor, then you would like Stacy's adventure. That's really it.
+    </p>
+
+</div>
+
+<div class="section-card reveal">
+
+    <h2>Challenges</h2>
+
+    <p class="section-sub">What went wrong and how I handled it</p>
+
+    <p>
+      The only real challenges I had with this project, was the major procasination habits as I literally didn't start really working on this until the last minute. Working on this literally the night before it's due, lessens the quality & efficiency of the project. Another thing that really bugged me, was the rushing of this as I was clearly rushing with this as this project is clearly unfinished but meets the requirements to be submitted. I apologize for the unfinished images, I'm really feeling extremely lazy right now & I want to go to bed as I am writing this at 9pm. Next thing I want to mention is that my schedule was very busy because I made it busy, this was completely avoidable and I could've found more time to work on this project without pushing all of this cortisol on myself.
+    </p>
+
+</div>
+
+<div class="section-card reveal">
+
+    <h2>Takeaways</h2>
+<ul>
                     <li>Elimination of Procasination Habits.</li>
                     <li>Take your time.</li>
                     <li>Open up your schedule a little more.</li>
                 </ul>
-            </div>
+</div>
 
-            <div class="section-card">
-                <h2>Next Steps</h2>
-                <ul>
+<div class="section-card reveal">
+
+    <h2>Next Steps</h2>
+
+    <ul>
                     <li>Maybe work on this a little more..</li>
                     <li>Take my challenges in mind, to improve for the next project.</li>
                 </ul>
+
             </div>
 
-            <a href="https://github.com/nileg3073/sep10a-cyoa-project">Preview of the project</a><br>
-            <a href="https://github.com/nileg3073/sep10a-cyoa-project/blob/main/start.md">Play the adventure</a>
+            <div class="project-links reveal">
 
-            <img src="img/preview-of-project.jpg" class="img-fluid project-img">
+                <a href="https://github.com/nileg3073/sep10a-cyoa-project" target="_blank">
+                    Preview of the project
+                </a>
+
+                <a href="https://github.com/nileg3073/sep10a-cyoa-project/blob/main/start.md" target="_blank">
+                   Play the adventure
+                </a>
+
+            </div>
+
+            <div class="text-center reveal">
+
+                <img src="../img/preview-of-project.jpg"
+                     class="img-fluid project-img">
+
+            </div>
 
         </div>
+
     </div>
 
     <!-- FOOTER -->
-    <footer class="text-center">
-        <a href="#" target="_blank"><img src="../img/fork.png"></a><br>
+
+    <footer>
+
+        <a href="https://nileg3073.github.io" target="_blank">
+            <img src="../img/fork.png">
+        </a>
+
+        <br>
+
         <a href="https://hstatsep.github.io" target="_blank">
             <img src="https://hstatsep.github.io/img/hstatsep-logo-small.png">
         </a>
+
     </footer>
 
+    <script>
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                }
+
+            });
+
+        });
+
+        document.querySelectorAll(".reveal").forEach(el => {
+
+            observer.observe(el);
+
+        });
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
+```
